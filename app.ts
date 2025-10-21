@@ -20,7 +20,7 @@ connectDB();
 app.use(cors({
   origin: [
     process.env.FRONTEND_URL || 'http://localhost:3000',
-    'https://your-app.vercel.app' // Your actual Vercel domain
+    'https://healthcare-frontend-zeta.vercel.app/'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
