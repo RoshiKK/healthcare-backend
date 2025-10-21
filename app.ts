@@ -17,13 +17,12 @@ const app = express();
 connectDB();
 
 // Middlewares
-// Update your CORS configuration
 app.use(cors({
   origin: [
     'http://localhost:3000',
+    'https://healthcare-frontend-zeta.vercel.app',
     'https://healthcare-frontend-zeta.vercel.app/',
-    'https://*.vercel.app',
-    process.env.FRONTEND_URL || 'https://healthcare-frontend.vercel.app'
+    'https://*.vercel.app'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
