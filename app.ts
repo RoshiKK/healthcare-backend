@@ -17,14 +17,17 @@ const app = express();
 connectDB();
 
 // Middlewares
+// Update your CORS configuration
 app.use(cors({
   origin: [
-    process.env.FRONTEND_URL || 'http://localhost:3000',
-    'https://healthcare-frontend-zeta.vercel.app/'
+    'http://localhost:3000',
+    'https://healthcare-frontend-zeta.vercel.app/',
+    'https://*.vercel.app',
+    process.env.FRONTEND_URL || 'https://healthcare-frontend.vercel.app'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'Cookie'],
 }));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
